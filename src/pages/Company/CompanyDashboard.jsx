@@ -1,0 +1,1 @@
+export default function CompanyDashboard({setScreen}){return <div style={{padding:20}}><h2>Company Dashboard - 13 Resumes</h2><button onClick={()=>setScreen('home')}>Home</button></div>;}

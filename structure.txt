@@ -1,0 +1,21 @@
+udyog99/ - ROOT
+├── src/
+│ ├── components/ (6 files)
+│ │ ├── Logo.jsx - 4 sizes: header 200px, splash 320px, card 220px, welcome 260px
+│ │ ├── BrandHeader.jsx - 72px height, 16px radius, Home right
+│ │ ├── BlueBanner.jsx - 80px height, #2563eb to #1e3a8a gradient
+│ │ ├── PremiumBanner.jsx - 100px height, Gold gradient
+│ │ ├── JobCard.jsx - 140px height, colored left border
+│ │ └── AuthLayout.jsx - Login wrapper
+│ ├── pages/ (6 files)
+│ │ ├── Splash.jsx - 3 sec timer
+│ │ ├── Welcome.jsx - Search by skills
+│ │ ├── Login.jsx - Mobile/Email tabs
+│ │ ├── WelcomePrabhas.jsx - Fill/Upload resume
+│ │ ├── Congrats.jsx - Go to Dashboard
+│ │ └── Dashboard.jsx - Blue banner + Job Categories (8 cards)
+│ ├── assets/logos/ (empty - mee logos ikkada)
+│ ├── App.js - Routing with useState
+│ ├── App.css - Global styles
+│ └── index.js - Root render
+└── public/index.html

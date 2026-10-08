@@ -1,0 +1,1 @@
+export default function JobsList({setScreen}){return <div style={{padding:20}}><button onClick={()=>setScreen('home')}>Back</button><h2>Job Categories - 6 Cards</h2></div>;}

@@ -1,0 +1,1 @@
+export default function ResumeCard({setScreen}){return <div style={{padding:20}}><h2>Unlock Resume - 9 / 99</h2><button onClick={()=>setScreen('home')}>Back</button></div>;}
