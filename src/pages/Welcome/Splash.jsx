@@ -1,10 +1,20 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import logoRound from '../../assets/logos/logo-round.jpg';
 
 export default function Splash({onNext}){
+  const [showWelcome, setShowWelcome] = useState(false);
+
   useEffect(()=>{
-    const t = setTimeout(()=> onNext(), 2500); // 2.5 sec flash
-    return ()=> clearTimeout(t);
+    // 0.8 sec taruvata Welcome text chupinchu
+    const t1 = setTimeout(()=> setShowWelcome(true), 800);
+
+    // 3 sec taruvata next page ki vellu
+    const t2 = setTimeout(()=> onNext(), 3000);
+
+    return ()=> {
+      clearTimeout(t1);
+      clearTimeout(t2);
+    }
   },[onNext]);
 
   return(
@@ -18,9 +28,21 @@ export default function Splash({onNext}){
           animation:'flashPop 2.2s ease-out'
         }}
       />
-      <h1 style={{marginTop:'20px', fontSize:'30px', fontWeight:'900', animation:'fadeIn 1s ease-in 0.5s both'}}>
-        <span style={{color:'#1655ff'}}>Udyog</span><span style={{color:'#ff7e00'}}>99.com</span>
-      </h1>
+
+      {/* Welcome Text - Meeru Adiginattu */}
+      {showWelcome && (
+        <h1 style={{
+          marginTop:'24px',
+          fontSize:'28px',
+          fontWeight:'800',
+          animation:'fadeInUp 0.8s ease-out',
+          textAlign:'center'
+        }}>
+          <span style={{color:'#555', fontWeight:'600', display:'block', fontSize:'22px', marginBottom:'4px'}}>Welcome to</span>
+          <span style={{color:'#1655ff'}}>Udyog</span><span style={{color:'#ff7e00'}}>99.com</span>
+        </h1>
+      )}
+
       <style>{`
         @keyframes flashPop{
           0%{transform:scale(0); opacity:0}
@@ -29,7 +51,7 @@ export default function Splash({onNext}){
           70%{transform:scale(1.1)}
           100%{transform:scale(1)}
         }
-        @keyframes fadeIn{
+        @keyframes fadeInUp{
           from{opacity:0; transform:translateY(20px)}
           to{opacity:1; transform:translateY(0)}
         }
